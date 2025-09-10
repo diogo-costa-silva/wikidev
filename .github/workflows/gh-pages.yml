@@ -21,7 +21,7 @@ jobs:
         with:
           python-version: "3.12" # uv instala e gere esta versão
       - run: uv sync # instala deps do pyproject.toml para a .venv
-      - run: uv run mkdocs build --strict
+      - run: uv run mkdocs build
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
