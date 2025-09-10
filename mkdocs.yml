@@ -1,1 +1,155 @@
-site_name: My Docs
+site_name: Diogo's Dev Wiki
+site_description: Development templates, guides, and workflows for modern software engineering
+site_url: https://diogo-costa-silva.github.io/wikidev/
+repo_url: https://github.com/diogo-costa-silva/wikidev
+edit_uri: ""  # keep disabled
+use_directory_urls: true
+
+theme:
+  name: material
+  language: en
+  icon:
+    logo: material/library
+  favicon: assets/favicon.ico
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - navigation.instant # Faster navigation
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+    - search.share
+    - toc.follow
+    - toc.integrate
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue grey
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue grey
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+plugins:
+  - search:
+      lang: en
+  - tags
+  - section-index
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+      locale: en
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+      title: On this page
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+
+extra_javascript:
+  - javascripts/extra.js
+
+nav:
+  - Home: index.md
+  - Data Analysis:
+    - data-analysis/index.md
+    - Methodology: data-analysis/methodology.md
+    - Data Cleaning: data-analysis/data-cleaning.md
+    - Feature Engineering: data-analysis/feature-engineering.md
+    - Pandas Quick Cheats: data-analysis/pandas-cheats.md
+  - Python:
+    - python/index.md
+    - Install & Setup: python/install-setup.md
+    - pyenv: python/pyenv.md
+    - uv: python/uv.md
+    - Project Structure: python/project-structure.md
+    - Environments & Dependencies: python/environments.md
+    - Data Workflow: python/data-workflow.md
+  - Databases:
+    - databases/index.md
+    - Database Setup & Tools: databases/setup-tools.md
+    - Schema Design: databases/schema-design.md
+    - SQL Basics: databases/sql-basics.md
+    - SQL Joins: databases/sql-joins.md
+    - SQL Aggregations: databases/sql-aggregations.md
+    - SQL Subqueries & CTEs: databases/sql-subqueries-ctes.md
+    - DBeaver: databases/dbeaver.md
+    - Performance & Optimization: databases/performance.md
+  - Node.js:
+    - node/index.md
+    - Install & Setup: node/install-setup.md
+    - Project Init: node/project-init.md
+  - Git:
+    - git/index.md
+    - Setup & Identity: git/setup-identity.md
+    - Basic Workflow: git/basic-workflow.md
+    - Branching Model: git/branching-model.md
+    - Pull Requests: git/pull-requests.md
+    - GitHub CLI: git/github-cli.md
+  - AI Tools:
+    - ai-tools/index.md
+    - Claude Code:
+      - ai-tools/claude-code/index.md
+      - Workflow Guide: ai-tools/claude-code/guides/workflow.md
+      - Prompting Guide: ai-tools/claude-code/guides/prompting.md
+      - MCP Configurations: ai-tools/claude-code/mcp/configurations.md
+    - Claude Desktop:
+      - ai-tools/claude-desktop/index.md
+      - Conversations: ai-tools/claude-desktop/guides/conversations.md
+      - MCP Integrations: ai-tools/claude-desktop/mcp/integrations.md
+    - ChatGPT: ai-tools/chatgpt/index.md
+    - Gemini CLI: ai-tools/gemini-cli/index.md
+    - Ollama:
+      - ai-tools/ollama/index.md
+      - Model Recommendations: ai-tools/ollama/models.md
+      - Privacy Workflows: ai-tools/ollama/guides/privacy.md
+      - Performance Optimization: ai-tools/ollama/guides/performance.md
+      - API Integration: ai-tools/ollama/guides/api-integration.md
+  - Toolkit:
+    - toolkit/index.md
+    - MkDocs: toolkit/mkdocs.md
+    - VS Code & Cursor: toolkit/vscode-cursor.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/diogo-costa-silva
